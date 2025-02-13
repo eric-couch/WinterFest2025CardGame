@@ -25,9 +25,19 @@ public class Deck
                 Cards.Add(card);
             }
         }
+    }
 
-        // deal card method
-
+    // deal card method
+    // randomly pick a card from the deck and return that card
+    public Card DealCard()
+    {
+        Random rnd = new Random();
+        // with random get a random number between 0 and 51
+        int cardToDealIndex = rnd.Next(Cards.Count);
+        // get the card, then remove that card from the deck, then return that card after removing
+        Card cardtoDeal = Cards[cardToDealIndex];
+        Cards.Remove(cardtoDeal);
+        return cardtoDeal;
     }
 
 }

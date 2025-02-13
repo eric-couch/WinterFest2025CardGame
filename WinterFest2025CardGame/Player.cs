@@ -9,7 +9,12 @@ namespace WinterFest2025CardGame;
 public class Player
 {
     public string Name { get; set; }
-    public List<Card> Hand { get; set; }
+    public List<Card> Hand { get; set; } = new List<Card>();
+
+    public Player(string Name)
+    {
+        this.Name = Name;
+    }
 
     // get a card
 
@@ -18,7 +23,7 @@ public class Player
     {
         foreach (Card card in Hand)
         {
-            Console.WriteLine(card);
+            Console.Write($"{card}\t");
         }
     }
 }
